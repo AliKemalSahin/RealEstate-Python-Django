@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="45c69555-8958-43be-a92e-0ae1502b687d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../firstProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../firstProject/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="emlakcilik" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="AliKemalSahin" />
+        <option value="ali kemal sahiiin" />
+      </list>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1YiNnVHYspMoCfoHVUd5wfGjq9v" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="sortByType" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../firstProject" />
+    <property name="run.code.analysis.last.selected.profile" value="aDefault" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Django\emlakcilik\ev" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="emlakcilik" type="Python.DjangoServer" factoryName="Django server">
+      <module name="emlakcilik" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="emlakcilik.settings" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="45c69555-8958-43be-a92e-0ae1502b687d" name="Default Changelist" comment="" />
+      <created>1583421621797</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1583421621797</updated>
+      <workItem from="1583421623748" duration="18702000" />
+      <workItem from="1583492852177" duration="1112000" />
+      <workItem from="1583865155498" duration="3863000" />
+      <workItem from="1583869988445" duration="3456000" />
+      <workItem from="1583882684500" duration="1011000" />
+      <workItem from="1583922545139" duration="9968000" />
+      <workItem from="1583955977143" duration="4269000" />
+      <workItem from="1584474148369" duration="4525000" />
+      <workItem from="1584728209661" duration="7182000" />
+      <workItem from="1585326835787" duration="2575000" />
+      <workItem from="1585330998715" duration="98000" />
+      <workItem from="1585331167746" duration="762000" />
+    </task>
+    <task id="LOCAL-00001" summary="9.cu videooo">
+      <created>1585330646967</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1585330646967</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="9.cu videooo" />
+    <option name="LAST_COMMIT_MESSAGE" value="9.cu videooo" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="361" y="90" key="#Notifications" timestamp="1585330612104">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="361" y="90" key="#Notifications/0.0.1536.864@0.0.1536.864" timestamp="1585330612104" />
+    <state x="361" y="90" key="#Scopes" timestamp="1583438548406">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="361" y="90" key="#Scopes/0.0.1536.864@0.0.1536.864" timestamp="1583438548406" />
+    <state x="223" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585329573291">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="223" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864@0.0.1536.864" timestamp="1585329573291" />
+    <state x="496" y="106" key="#emlakcilik" timestamp="1583421772604">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="496" y="106" key="#emlakcilik/0.0.1536.864@0.0.1536.864" timestamp="1583421772604" />
+    <state x="528" y="303" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1583438061267">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="528" y="303" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.864@0.0.1536.864" timestamp="1583438061267" />
+    <state x="393" y="28" key="CommitChangelistDialog2" timestamp="1585331065948">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="393" y="28" key="CommitChangelistDialog2/0.0.1536.864@0.0.1536.864" timestamp="1585331065948" />
+    <state x="760" y="196" key="FileChooserDialogImpl" timestamp="1585330511949">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="760" y="196" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1585330511949" />
+    <state x="639" y="325" key="Github.ShareDialog" timestamp="1585331242125">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="639" y="325" key="Github.ShareDialog/0.0.1536.864@0.0.1536.864" timestamp="1585331242125" />
+    <state width="1493" height="223" key="GridCell.Tab.0.bottom" timestamp="1583447598839">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="223" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1583447598839" />
+    <state width="1493" height="223" key="GridCell.Tab.0.center" timestamp="1583447598838">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="223" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1583447598838" />
+    <state width="1493" height="223" key="GridCell.Tab.0.left" timestamp="1583447598838">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="223" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1583447598838" />
+    <state width="1493" height="223" key="GridCell.Tab.0.right" timestamp="1583447598839">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="223" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1583447598839" />
+    <state x="489" y="85" key="SettingsEditor" timestamp="1585330503745">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="489" y="85" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1585330503745" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1583931755598">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="498" height="446" key="SwitcherDM/0.0.1536.864@0.0.1536.864" timestamp="1583931755598" />
+    <state x="361" y="165" key="Vcs.Push.Dialog.v2" timestamp="1585331043006">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="361" y="165" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1585331043006" />
+    <state x="0" y="0" width="738" height="864" key="find.popup" timestamp="1583437956447">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="0" y="0" width="738" height="864" key="find.popup/0.0.1536.864@0.0.1536.864" timestamp="1583437956447" />
+    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1585329972753">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1585329972753" />
+  </component>
+</project>
