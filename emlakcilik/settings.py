@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'ckeditor',
+    'ckeditor_uploader',
 ]
 
 MIDDLEWARE = [
@@ -123,3 +125,22 @@ STATIC_URL = '/static/'   # home dosyasında olusturdugumuz static klasörünün
 MEDIA_URL = '/uploads/'     # proje klasöründe resimleri uploads altında images atsın diye bu ve altındaki tanımlama yapılıyor.
 MEDIA_ROOT = os.path.join(BASE_DIR,'uploads')   # media = dışardan yükliceğimiz şeyler
 
+SITE_ID = 1
+
+
+####################################
+##  CKEDITOR CONFIGURATION ##
+####################################
+
+CKEDITOR_JQUERY_URL = 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'
+
+CKEDITOR_UPLOAD_PATH = 'images/'
+CKEDITOR_IMAGE_BACKEND = "pillow"
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': None,
+    },
+}
+
+###################################

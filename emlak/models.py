@@ -2,6 +2,7 @@ from django.db import models
 
 # Create your models here.
 from django.utils.safestring import mark_safe
+from ckeditor_uploader.fields import RichTextUploadingField
 
 
 class Category(models.Model):   # tablomuz
@@ -38,7 +39,7 @@ class Emlak(models.Model):   # tablomuz
     price = models.FloatField()
     square = models.IntegerField()
     rooms = models.CharField(max_length=5)
-    detail = models.TextField()
+    detail = RichTextUploadingField()
     status = models.CharField(max_length=10, choices=STATUS)   # yukarda evet hayır verdiğimiz için drowdown menude evet hayır var
 
     create_at = models.DateTimeField(auto_now_add=True)   # ne zaman oluşturuldu
