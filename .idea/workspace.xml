@@ -4,9 +4,10 @@
     <list default="true" id="45c69555-8958-43be-a92e-0ae1502b687d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emlak/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/emlak/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emlakcilik/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/emlakcilik/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/emlakcilik/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/emlakcilik/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../firstProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../firstProject/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -64,12 +65,13 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../firstProject" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/home/templates" />
     <property name="run.code.analysis.last.selected.profile" value="aDefault" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Django\emlakcilik\home\templates" />
       <recent name="C:\Django\emlakcilik\ev" />
     </key>
   </component>
@@ -122,6 +124,7 @@
       <workItem from="1585330998715" duration="98000" />
       <workItem from="1585331167746" duration="762000" />
       <workItem from="1585743636455" duration="4071000" />
+      <workItem from="1585769533848" duration="14101000" />
     </task>
     <task id="LOCAL-00001" summary="9.cu videooo">
       <created>1585330646967</created>
