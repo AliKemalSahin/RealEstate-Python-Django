@@ -85,49 +85,77 @@
 	<!-- Page top section end -->
 
 	<!-- Contact section-->
+
 	<section class="contact-section">
+
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-7 offset-lg-5">
+
+				<div class="col-lg-7 offset-lg-7">
 					<div class="contact-info-box">
-						<!--      <h5 class="contact-title">OFFICE</h5>   SİTENİN KENDİ TEMPLATE ORJİNALİ(KULLANILABİLİR Mİ HOCAYA SOR !!!)
+
+                    {% if messages %}
+                            {% for message in messages %}
+                                <div class="alert alert-{{ message.tags }}" role="alert">
+                                    {{ message }}
+                                </div>
+                            {% endfor %}
+                    {% endif %}
 						<div class="contact-info">
 							<div class="ci-item">
 								<img src=" {% static 'img/icons/location.png' %}" class="ci-icon" alt="">
-								<p>1385  Cedar Street, Black Rock, Arkansas, 72415</p>
+								<p>Kastamonu Yolu Demir Çelik Kampüsü, 78050</p>
 							</div>
 							<div class="ci-item">
 								<img src="{% static 'img/icons/headphone.png' %}" class="ci-icon" alt="">
-								<p>870-878-6345<br>870-515-8691</p>
+								<p>444 0 478<br>444 0 078</p>
 							</div>
 						</div>
-						<h5 class="contact-title">QUICK HELLO</h5>
-						<form class="contact-form">
+						<h5 class="contact-title">Bize Ulaşın...</h5>
+						<form class="contact-form" action="" method="post">
+
+                            {% csrf_token %}
+
 							<div class="form-field">
 								<img src="{% static 'img/icons/profile.png' %} " alt="" >
-								<input type="text" placeholder="Full Name">
+								{{ form.name }}
 							</div>
 							<div class="form-field">
 								<img src="{% static 'img/icons/envelope.png' %}" alt="" >
-								<input type="text" placeholder="Email Address">
+								{{ form.email }}
+							</div>
+                            <div class="form-field">
+								<img src="{% static 'img/icons/subject.png' %}" alt="" >
+								{{ form.subject }}
 							</div>
 							<div class="form-field">
 								<img src="{% static 'img/icons/chat.png' %}" alt="" >
-								<textarea placeholder="Hi ..."></textarea>
+								{{ form.message }}
 							</div>
-							<button class="site-btn">send</button>
-						</form>           -->
-
-
+							<button class="site-btn" value="SEND FORM">send</button>
+						</form>
                         {{ setting.contact | safe }}
-
 					</div>
 				</div>
+
+
+
+
+
+
+             <!--    <form action="" method="post" >
+                    <input type="submit" value="SEND FORM">
+                </form>     -->
+
+
+
+
+
 			</div>
 		</div>
 		<!-- Map -->
 		<div class="map">
-			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d693971.6621063045!2d-90.0912505103206!3d36.108831972894045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87d6b1b4c412b29f%3A0x9b2d8c4447fe1c96!2sCedar+St%2C+Black+Rock%2C+AR+72415%2C+USA!5e0!3m2!1sen!2sbd!4v1565787762946!5m2!1sen!2sbd" style="border:0"></iframe>
+			<iframe src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;coord=e.g: 41.20986995, 32.65670068008483&amp;q=Kastamonu%20Yolu%20Demir%20%C3%87elik%20Kamp%C3%BCs%C3%BC%2078050%20K%C4%B1lavuzlar%2FKarab%C3%BCk%20Merkez%2FKarab%C3%BCk%20T%C3%BCrkiye+(Karab%C3%BCk%20%C3%9Cniversitesi)&amp;ie=UTF8&amp;t=&amp;z=18&amp;iwloc=B&amp;output=embed" style="border:0"></iframe>
 		</div>
 	</section>
 	<!-- Contact section end-->
