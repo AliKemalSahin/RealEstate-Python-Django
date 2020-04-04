@@ -11,15 +11,21 @@
 			</div>
 		</div>
 		<div class="hero-slider owl-carousel owl-theme">
-			<div class="hs-item set-bg" data-setbg="{% static 'img/slider/1.jpg'%}">
+
+            {% for rs in sliderdata %}
+
+			<div class="hs-item set-bg" data-setbg="{{ rs.image.url }}">   <!-- 'img/slider/1.jpg' -->
 				<div class="container">
 					<div class="row">
 						<div class="col-xl-6 col-lg-7">
-							<h2>3 Modern homes for modern thinking people. </h2>
+							<h2> {{ rs.title }} </h2>
 						</div>
 					</div>
 				</div>
 			</div>
+
+            {% endfor %}
+<!--
 			<div class="hs-item set-bg" data-setbg="{% static 'img/slider/2.jpg'%}">
 				<div class="container">
 					<div class="row">
@@ -38,26 +44,25 @@
 					</div>
 				</div>
 			</div>
+			-->
 		</div>
+
 		<!-- Hero details slider -->
 		<div class="hero-nav-slider-warp">
 			<div class="container">
 				<div class="hero-nav-slider owl-carousel">
-					<div class="hns-item">
-						<h5>3 bedrooms version</h5>
-						<p>Availble from March 2019</p>
-						<span>$145,000</span>
-					</div>
-					<div class="hns-item">
-						<h5>4 bedrooms version + PRIVATE POOL </h5>
-						<p>Availble from March 2019</p>
-						<span>$145,000</span>
-					</div>
-					<div class="hns-item">
-						<h5>6 bedrooms version + pRIVATE POOL  </h5>
-						<p>Availble from March 2019</p>
-						<span>$145,000</span>
-					</div>
+                    {% for rs in sliderdata %}
+
+                        <div class="hns-item">
+						    <h5>{{ rs.description }}</h5>
+						    <p>{{ rs.rooms}}</p>
+						    <span>${{rs.price}}</span>
+                            <p>  </p>
+                        <!-- Button calısmadı o yüzden input kullanıldı çözümü varmı sonra bak !!! -->
+                        <input class="site-btn" type="button" onClick="location.href='/emlak/{{ rs.id }}/{{ rs.title }}'" value="SATIN AL" />
+					    </div>
+
+                {% endfor %}
 				</div>
 			</div>
 		</div>

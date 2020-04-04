@@ -11,8 +11,8 @@ class Category(models.Model):   # tablomuz
         ('False','Hayır'),
     )
     title = models.CharField(max_length=30)     # uzunluk
-    keywords = models.CharField(max_length=255)     # alan türü
-    description = models.CharField(max_length=255)     #alan türü
+    keywords = models.CharField(blank=True,max_length=255)     # alan türü
+    description = models.CharField(blank=True,max_length=255)     #alan türü
     image = models.ImageField(blank=True,upload_to='images/')     #dosya eklenecek resim
     status = models.CharField(max_length=10, choices=STATUS)   # yukarda evet hayır verdiğimiz için drowdown menude evet hayır var
     slug = models.SlugField()     #adres satırında id yerine metinsel bir şekilde çagırmak icin category/3
@@ -33,13 +33,14 @@ class Emlak(models.Model):   # tablomuz
     )                                                                    # one to many -> pantolon hem kışlıkta hem erkek giysisi tablosunda olabilir
     category = models.ForeignKey(Category,on_delete=models.CASCADE)      # burada ise tablodaki gibi productta category_id category deki id ye bağlı(manyToOne)
     title = models.CharField(max_length=30)     # uzunluk
-    keywords = models.CharField(max_length=255)     # alan türü
-    description = models.CharField(max_length=255)     #alan türü
+    keywords = models.CharField(blank=True,max_length=255)     # alan türü
+    description = models.CharField(blank=True,max_length=255)     #alan türü
     image = models.ImageField(blank=True,upload_to='images/')     #dosya eklenecek resim
     price = models.FloatField()
     square = models.IntegerField()
-    rooms = models.CharField(max_length=5)
+    rooms = models.CharField(blank=True,max_length=5)
     detail = RichTextUploadingField()
+    slug = models.SlugField(blank=True,max_length=255)
     status = models.CharField(max_length=10, choices=STATUS)   # yukarda evet hayır verdiğimiz için drowdown menude evet hayır var
 
     create_at = models.DateTimeField(auto_now_add=True)   # ne zaman oluşturuldu
