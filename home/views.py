@@ -3,7 +3,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 
 # Create your views here.
-from emlak.models import Emlak
+from emlak.models import Emlak, Category
 from home.models import Setting,ContactFormu, ContactFormMessage
 
 
@@ -13,8 +13,9 @@ def index(request):
     #text = "Satış Danışmanı <br> Ali Kemal Şahin <br> Merhaba"
     #context = {'text': text}
     sliderdata = Emlak.objects.all()[:3] #gereksiz yere tüm veriyi getirmemek için :4 tane aldık
+    category = Category.objects.all()
 
-    context = {'setting': setting, 'page': 'home', 'sliderdata':sliderdata }
+    context = {'setting': setting,'category': category, 'page': 'home', 'sliderdata':sliderdata }
     return render(request, 'index.html', context)
 
 

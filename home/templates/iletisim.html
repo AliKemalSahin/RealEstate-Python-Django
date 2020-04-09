@@ -8,7 +8,7 @@
 	<meta name="description" content="Real estate html template">
 	<meta name="keywords" content="real estate, html">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
+	        <link rel="stylesheet" href="{% static 'css/altCategory.css' %}">
 	<!-- Favicon -->
 	<link href="{% static 'img/favicon.ico '%}" rel="shortcut icon"/>
 
@@ -47,7 +47,7 @@
 		<div class="nav-switch">
 			<i class="fa fa-bars"></i>
 		</div>
-		<div class="container">
+		<nav class="menu">
 			<ul class="main-menu">
 				<li><a href="/">Anasayfa</a></li>
 				<li><a href="/hakkimizda">Hakkımızda</a></li>
@@ -55,8 +55,68 @@
 				<li><a href="/referanslar">Referanslar</a></li>
 				<li><a href="blog.html">Haberler</a></li>
 				<li><a href="/iletisim">İletişim</a></li>
+
+                <!--    ALT KATEGORİ BÖLÜMÜÜ
+
+                <li data-dropdown ><a href="#">Alt Kategoriler</a>
+                    <div class="dropdown">
+
+                        <ul>
+					        <li data-dropdown ><a href="#">Emlak</a>
+                                <div class="dropdown">
+                                    <ul>
+                                        <li >
+                                            <a href="#">Fonksiyonlar</a>
+                                        </li>
+                                        <li >
+                                            <a href="#">Fonksiyonlar</a>
+                                        </li>
+                                        <li >
+                                            <a href="#">Fonksiyonlar</a>
+                                        </li>
+                                    </ul>
+
+                                </div>
+                            </li>
+                            <li data-dropdown ><a href="#">Yazlık</a>
+                                <div class="dropdown">
+                                    <ul>
+                                        <li >
+                                            <a href="#">Fonksiyonlar</a>
+                                        </li>
+                                        <li >
+                                            <a href="#">Fonksiyonlar</a>
+                                        </li>
+                                        <li >
+                                            <a href="#">Fonksiyonlar</a>
+                                        </li>
+                                    </ul>
+
+                                </div>
+                            </li>
+					        <li data-dropdown ><a href="#">Rezidans</a>
+                                <div class="dropdown">
+                                    <ul>
+                                        <li >
+                                            <a href="#">Fonksiyonlar</a>
+                                        </li>
+                                        <li >
+                                            <a href="#">Fonksiyonlar</a>
+                                        </li>
+                                        <li >
+                                            <a href="#">Fonksiyonlar</a>
+                                        </li>
+                                    </ul>
+
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                </li>   -->
 			</ul>
-		</div>
+		</nav>
 	</header>
 	<!-- Header section end -->
 	
@@ -92,7 +152,7 @@
 			<div class="row">
 
 				<div class="col-lg-7 offset-lg-7">
-					<div class="contact-info-box">
+					<div style="background-color: #F3F3F3" class="contact-info-box">
 
                     {% if messages %}
                             {% for message in messages %}

@@ -3,9 +3,11 @@ from django.db import models
 # Create your models here.
 from django.utils.safestring import mark_safe
 from ckeditor_uploader.fields import RichTextUploadingField
+from mptt.fields import TreeForeignKey
+from mptt.models import MPTTModel
 
 
-class Category(models.Model):   # tablomuz
+class Category(MPTTModel):   # tablomuz
     STATUS = (            # --> 2 amaçla yapılır 1-Tabloyu oluşturmak   2- Adminde yönetilmeyi ayarlamak
         ('True','Evet'),
         ('False','Hayır'),
@@ -16,12 +18,22 @@ class Category(models.Model):   # tablomuz
     image = models.ImageField(blank=True,upload_to='images/')     #dosya eklenecek resim
     status = models.CharField(max_length=10, choices=STATUS)   # yukarda evet hayır verdiğimiz için drowdown menude evet hayır var
     slug = models.SlugField()     #adres satırında id yerine metinsel bir şekilde çagırmak icin category/3
-    parent = models.ForeignKey('self',blank=True, null=True, related_name='children', on_delete=models.CASCADE)   # kendisiyle ilişkili(kendi id)
+    parent = TreeForeignKey('self',blank=True, null=True, related_name='children', on_delete=models.CASCADE)   # kendisiyle ilişkili(kendi id)
     create_at = models.DateTimeField(auto_now_add=True)   # ne zaman oluşturuldu
     update_at = models.DateTimeField(auto_now_add=True)   # ne zaman güncellendi
 
+    class MPTTMeta:
+        order_insertion_by = ['title']
+
     def __str__(self):
-        return self.title
+        full_path = [self.title]
+        k = self.parent
+        while k is not None:
+            full_path.append(k.title)
+            k = k.parent
+        return ' -> '.join(full_path[::-1])
+
+
     def image_tag(self):   # Adminde yuklenen resimlerin gosterilmesi
         return mark_safe('<img src="{}" height="50"/>'.format(self.image.url))   # bu html kodu ile resimler gözüküyor
     image_tag.short_description = "Image"

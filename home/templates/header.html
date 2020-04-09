@@ -1,6 +1,7 @@
 {% load static %}
 <!-- Header section -->
 	<header class="header-section">
+        <link rel="stylesheet" href="{% static 'css/altCategory.css' %}">
 		<!-- logo -->
 		<a href="index.html" class="site-logo">
 			<img src="{% static 'img/logo.png'%}" alt="">
@@ -8,7 +9,7 @@
 		<div class="nav-switch">
 			<i class="fa fa-bars"></i>
 		</div>
-		<div class="container">
+		<nav class="menu">
 			<ul class="main-menu">
 				<li><a href="/">Anasayfa</a></li>
 				<li><a href="/hakkimizda">Hakkımızda</a></li>
@@ -16,7 +17,38 @@
 				<li><a href="/referanslar">Referanslar</a></li>
 				<li><a href="blog.html">Haberler</a></li>
 				<li><a href="/iletisim">İletişim</a></li>
+                <li data-dropdown ><a href="#">Alt Kategoriler</a>
+                    <div class="dropdown">
+
+                        <ul >
+                            {% load mptt_tags %}
+
+                        {% recursetree category %}
+
+                            <li {% if not node.is_leaf_node %}   data-dropdown {% endif %} ><a href="/category/{{ node.slug }}"  >{{ node.title }}</a>
+                                <div class="dropdown">
+                                <div class="row">
+                                {% if not node.is_leaf_node %}
+                                    <ul class="children ">
+                                       {{ children }}
+                                    </ul>
+                                {% endif %}
+                                </div>
+                                </div>
+                            </li>
+                        {% endrecursetree %}
+
+
+
+
+                        </ul>
+                    </div>
+
+                </li>
 			</ul>
-		</div>
+		</nav>
+
+
 	</header>
+
 	<!-- Header section end -->
