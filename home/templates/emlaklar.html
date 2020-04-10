@@ -1,0 +1,75 @@
+{% extends 'homebase.html' %}
+{% load static %}
+{% block title %} {{ categorydata.title}} - Emlaklar {% endblock %}
+{% block keywords %} {{ categorydata.keywords }}{% endblock %}
+{% block description %} {{ categorydata.description }} {% endblock %}
+
+
+{%  block head %}
+    <link href='{{ setting.icon.url }}' rel="shortcut icon"/>
+{% endblock %}
+
+{% block content %}
+
+
+	<section class="page-top-section set-bg" data-setbg="{% static 'img/page-top-bg/1.jpg'  %}">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="page-top-text text-white">
+						<h2>ŞAHİN EMLAKÇILIK -Emlaklar</h2>
+
+						<h7>Birlikte Daha Güçlü, Size her adımda destek olabilecek referanslarımız ve iş ortaklarımız </h7>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="hero-social-warp">
+				<div class="hero-social">
+					<a href=""><i class="fa fa-facebook"></i></a>
+					<a href=""><i class="fa fa-linkedin"></i></a>
+					<a href=""><i class="fa fa-twitter"></i></a>
+					<a href=""><i class="fa fa-youtube-play"></i></a>
+					<a href=""><i class="fa fa-instagram"></i></a>
+				</div>
+        </div>
+	</section>
+<div  id="breadcrumb">
+<div class="container">
+    <ul class="breadcrumb">
+        <li><a href="/">Anasayfa</a> </li>
+        <li class="active">/{{ categorydata.title }}</li>
+    </ul>
+</div>
+</div>
+    <div class="section">
+        <div class="container">
+            <h2>{{ categorydata.title }} Bölümü</h2><hr>
+            <div style="margin-top: 10px" class="row">
+                {%  for rs in emlaklar %}
+                <div class="col-lg-4 col-md-6">
+					<div style="background-color: #FCFCFC" class="development-box">
+						<img src="{{ rs.image.url }}" alt="">
+						<div class="dev-text">
+							<a href="/emlak/{{ rs.id }}/{{ rs.slug }}" ><h4> {{ rs.title }} </h4></a>
+							<h5> {{rs.rooms  }}</h5>
+							<p>{{ rs.description }} </p>
+							<div class="dev-price">
+								<span>from</span>
+								<h4>-${{ rs.price }}</h4>
+							</div>
+							<a href="" class="site-btn">MORE INFO</a>
+						</div>
+					</div>
+				</div>
+
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
+
+

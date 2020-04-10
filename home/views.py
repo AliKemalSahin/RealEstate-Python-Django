@@ -49,3 +49,12 @@ def iletisim(request):
     form = ContactFormu()
     context = {'setting': setting, 'form': form}
     return render(request, 'iletisim.html', context)
+
+
+
+def category_products(request,id,slug):
+    category = Category.objects.all()
+    categorydata = Category.objects.get(pk=id)
+    emlaklar = Emlak.objects.filter(category_id=id)
+    context = {'emlaklar':emlaklar,'category':category,'categorydata':categorydata}
+    return render(request,'emlaklar.html',context)

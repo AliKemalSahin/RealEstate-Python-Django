@@ -4,12 +4,12 @@
     <list default="true" id="45c69555-8958-43be-a92e-0ae1502b687d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emlak/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/emlak/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emlak/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/emlak/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emlakcilik/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/emlakcilik/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emlakcilik/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/emlakcilik/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/templates/hakkimizda.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/hakkimizda.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/homebase.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/homebase.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/templates/iletisim.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/iletisim.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/slider.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/slider.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../firstProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../firstProject/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -78,7 +78,27 @@
       <recent name="C:\Django\emlakcilik\ev" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Django tests.Test: home.templates">
+    <configuration name="Test: home.templates" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="emlakcilik" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="home.templates" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="emlakcilik" type="Python.DjangoServer" factoryName="Django server">
       <module name="emlakcilik" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -103,6 +123,11 @@
       <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Django tests.Test: home.templates" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -133,6 +158,11 @@
       <workItem from="1586030313417" duration="8707000" />
       <workItem from="1586369979502" duration="17298000" />
       <workItem from="1586437363877" duration="11976000" />
+      <workItem from="1586479985130" duration="599000" />
+      <workItem from="1586522013525" duration="1468000" />
+      <workItem from="1586538559476" duration="5125000" />
+      <workItem from="1586543781213" duration="5742000" />
+      <workItem from="1586551481121" duration="4178000" />
     </task>
     <task id="LOCAL-00001" summary="9.cu videooo">
       <created>1585330646967</created>
@@ -164,10 +194,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="223" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864@0.0.1536.864" timestamp="1585329573291" />
-    <state x="499" y="179" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1586375192527">
+    <state x="499" y="179" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1586548728526">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="499" y="179" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.864@0.0.1536.864" timestamp="1586375192527" />
+    <state x="499" y="179" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.864@0.0.1536.864" timestamp="1586548728526" />
     <state x="496" y="106" key="#emlakcilik" timestamp="1583421772604">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -188,22 +218,22 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="639" y="325" key="Github.ShareDialog/0.0.1536.864@0.0.1536.864" timestamp="1585331242125" />
-    <state width="1493" height="223" key="GridCell.Tab.0.bottom" timestamp="1583447598839">
+    <state width="1493" height="223" key="GridCell.Tab.0.bottom" timestamp="1586550062770">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="223" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1583447598839" />
-    <state width="1493" height="223" key="GridCell.Tab.0.center" timestamp="1583447598838">
+    <state width="1493" height="223" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1586550062770" />
+    <state width="1493" height="223" key="GridCell.Tab.0.center" timestamp="1586550062770">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="223" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1583447598838" />
-    <state width="1493" height="223" key="GridCell.Tab.0.left" timestamp="1583447598838">
+    <state width="1493" height="223" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1586550062770" />
+    <state width="1493" height="223" key="GridCell.Tab.0.left" timestamp="1586550062769">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="223" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1583447598838" />
-    <state width="1493" height="223" key="GridCell.Tab.0.right" timestamp="1583447598839">
+    <state width="1493" height="223" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1586550062769" />
+    <state width="1493" height="223" key="GridCell.Tab.0.right" timestamp="1586550062770">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="223" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1583447598839" />
+    <state width="1493" height="223" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1586550062770" />
     <state x="489" y="85" key="SettingsEditor" timestamp="1585330503745">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -224,5 +254,8 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="431" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1586374139122" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/emlakcilik$Test__home_templates.coverage" NAME="Test: home.templates Coverage Results" MODIFIED="1586548831163" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>
