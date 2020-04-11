@@ -14,8 +14,12 @@ def index(request):
     #context = {'text': text}
     sliderdata = Emlak.objects.all()[:3] #gereksiz yere tüm veriyi getirmemek için :4 tane aldık
     category = Category.objects.all()
+    dayproducts = Emlak.objects.all()[:4]
+    lastproducts = Emlak.objects.all().order_by('-id')[:4]
+    onecikan = Emlak.objects.all().order_by('?')[:4]
 
-    context = {'setting': setting,'category': category, 'page': 'home', 'sliderdata':sliderdata }
+    context = {'setting': setting,'category': category, 'page': 'home', 'sliderdata':sliderdata,
+               'dayproducts':dayproducts,'lastproducts':lastproducts,'onecikan':onecikan, }
     return render(request, 'index.html', context)
 
 

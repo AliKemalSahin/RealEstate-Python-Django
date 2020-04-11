@@ -3,19 +3,19 @@
 	<div class="features-icons-section">
 		<div class="features-icon-item">
 			<i class="flaticon-151-banker"></i>
-			<p>Easy Buying</p>
+			<p>Kolay Satış</p>
 		</div>
 		<div class="features-icon-item">
 			<i class="flaticon-151-closing"></i>
-			<p>Ready to Move</p>
+			<p>Harekete Hazır</p>
 		</div>
 		<div class="features-icon-item">
 			<i class="flaticon-151-maps-and-flags-3"></i>
-			<p>Great Location</p>
+			<p>Muhteşem Yer</p>
 		</div>
 		<div class="features-icon-item">
 			<i class="flaticon-151-step-ladder"></i>
-			<p>Comunity Pool</p>
+			<p>Havuz</p>
 		</div>
 		<div class="features-icon-item">
 				<i class="flaticon-151-trees"></i>
@@ -23,24 +23,24 @@
 		</div>
 		<div class="features-icon-item">
 			<i class="flaticon-151-fader"></i>
-			<p>Sunny Location</p>
+			<p>Güneşli Yerler</p>
 		</div>
 		<div class="features-icon-item">
 			<i class="flaticon-151-indoor"></i>
-			<p>Modern Design</p>
+			<p>Modern Dizayn</p>
 		</div>
 		<div class="features-icon-item">
 			<i class="flaticon-151-maps-and-flags-1"></i>
-			<p>Parking Spaces</p>
+			<p>Park Alanı</p>
 		</div>
 		<div class="features-icon-item">
 			<i class="flaticon-151-transportation"></i>
-			<p>Garage Included</p>
+			<p>Garajlı Yerler</p>
 		</div>
 	</div>
 	<!-- features icons section end-->
 
-	<!-- Intro section -->
+	<!-- Intro section
 	<section class="intro-section">
 		<div class="container">
 			<div class="section-title">
@@ -73,14 +73,104 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</section>  -->
 	<!-- Intro section end-->
 	
 	<!-- Design section end-->
-	<section class="design-section">
+
+<section class="design-section">
+
+    <div class="container" >
+        <div class="section-title st-light">
+            <h2>EVLERİMİZ</h2>
+        </div>
+    </div>
+
+
+    	<div class="property-features-slider owl-carousel ">
+
+        {% for rs in dayproducts %}
+            <div class="feature-box">
+            		<a  style="position:relative; z-index: 4;" href="/addtocard/{{ rs.id }}" >
+			            <img src="{{rs.image.url}}" alt="">
+			            <i class="flaticon-151-reading-glasses"></i>
+                        <h5 align="center">{{ rs.title }}</h5>
+                        <h5>Fiyat : ${{ rs.price }}</h5>
+		            </a>
+
+
+            </div>
+        {% endfor %}
+	</div>
+
+
+</section>
+
+
+<section class="design-section">
+
+    <div class="container">
+        <div class="section-title st-light">
+            <h2>SON BAKILANLAR</h2>
+        </div>
+    </div>
+
+
+    	<div class="property-features-slider owl-carousel ">
+
+        {% for rs in lastproducts %}
+            <div class="feature-box">
+            		<a  style="position:relative; z-index: 4;" href="/addtocard/{{ rs.id }}" >
+			            <img src="{{rs.image.url}}" alt="">
+			            <i class="flaticon-151-reading-glasses"></i>
+                        <h5 align="center">{{ rs.title }}</h5>
+                        <h5>Fiyat : ${{ rs.price }}</h5>
+		            </a>
+
+
+            </div>
+        {% endfor %}
+	</div>
+
+
+</section>
+<section class="design-section">
+
+    <div class="container">
+        <div class="section-title st-light">
+            <h2>SİZİN İÇİN SEÇTİKLERİMİZ</h2>
+        </div>
+    </div>
+
+
+    	<div class="property-features-slider owl-carousel ">
+
+        {% for rs in onecikan %}
+            <div class="feature-box">
+            		<a  style="position:relative; z-index: 4;" href="/addtocard/{{ rs.id }}" >
+			            <img src="{{rs.image.url}}" alt="">
+			            <i class="flaticon-151-reading-glasses"></i>
+                        <h5 align="center">{{ rs.title }}</h5>
+                        <h5>Fiyat : ${{ rs.price }}</h5>
+		            </a>
+
+
+            </div>
+        {% endfor %}
+	</div>
+
+
+</section>
+
+
+
+
+	<!-- Design section end-->
+<!--
+<section class="design-section">
 		<div class="container">
 			<div class="section-title st-light">
-				<h2>our houses</h2>
+				<h2>SON GEZİLENLER</h2>
 			</div>
 		</div>
 		<div class="design-slider owl-carousel">
@@ -117,8 +207,7 @@
 				</div>
 			</div>
 		</div>
-	</section>
-	<!-- Design section end-->
+	</section>   -->
 	
 	<!-- Location section-->
 	<section class="location-section spad">

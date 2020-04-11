@@ -47,7 +47,7 @@
             <h2>{{ categorydata.title }} Bölümü</h2><hr>
             <div style="margin-top: 10px" class="row">
                 {%  for rs in emlaklar %}
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-4 col-md-6 feature-box">
 					<div style="background-color: #FCFCFC" class="development-box">
 						<img src="{{ rs.image.url }}" alt="">
 						<div class="dev-text">
@@ -58,7 +58,7 @@
 								<span>from</span>
 								<h4>-${{ rs.price }}</h4>
 							</div>
-							<a href="" class="site-btn">MORE INFO</a>
+							<a href="#" style="position:relative; z-index: 4;" class="site-btn">MORE INFO</a>
 						</div>
 					</div>
 				</div>
