@@ -3,7 +3,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 
 # Create your views here.
-from emlak.models import Emlak, Category
+from emlak.models import Emlak, Category, Images
 from home.models import Setting,ContactFormu, ContactFormMessage
 
 
@@ -62,3 +62,14 @@ def category_products(request,id,slug):
     emlaklar = Emlak.objects.filter(category_id=id)
     context = {'emlaklar':emlaklar,'category':category,'categorydata':categorydata}
     return render(request,'emlaklar.html',context)
+
+
+def emlak_detail(request,id,slug):
+    category = Category.objects.all()
+    emlak = Emlak.objects.get(pk=id)
+    images = Images.objects.filter(emlak_id=id)
+    context = {'emlak':emlak,
+               'category':category,
+               'images':images,
+               }
+    return render(request,'emlak_detail.html',context)

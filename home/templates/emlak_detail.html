@@ -1,0 +1,139 @@
+{% extends 'homebase.html' %}
+{% load static %}
+{% block title %} {{ emlak.title}} - Emlaklar {% endblock %}
+{% block keywords %} {{ emlak.keywords }}{% endblock %}
+{% block description %} {{ emlak.description }} {% endblock %}
+
+
+{%  block head %}
+    <link href='{{ setting.icon.url }}' rel="shortcut icon"/>
+{% endblock %}
+
+{% block content %}
+	<section class="page-top-section set-bg" data-setbg="{% static 'img/page-top-bg/1.jpg'  %}">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="page-top-text text-white">
+						<h2>ŞAHİN EMLAKÇILIK -Emlaklar</h2>
+
+						<h7>Birlikte Daha Güçlü, Size her adımda destek olabilecek referanslarımız ve iş ortaklarımız </h7>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="hero-social-warp">
+				<div class="hero-social">
+					<a href=""><i class="fa fa-facebook"></i></a>
+					<a href=""><i class="fa fa-linkedin"></i></a>
+					<a href=""><i class="fa fa-twitter"></i></a>
+					<a href=""><i class="fa fa-youtube-play"></i></a>
+					<a href=""><i class="fa fa-instagram"></i></a>
+				</div>
+        </div>
+	</section>
+    <div  id="breadcrumb">
+    <div class="container">
+        <ul class="breadcrumb">
+            <li><a href="/">Anasayfa  </a> </li>
+            <li class="active"> /Emlaklar/ </li>
+            <li><a href="/category/{{ emlak.category_id }}/{{ emlak.slug }}">{{ emlak.category }} </a> </li>
+            <li class="active">/{{ emlak.title }}</li>
+        </ul>
+    </div>
+    </div>
+
+
+
+    <section class="property-details-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-8 col-lg-7">
+                    <div class="property-details">
+                        <h2>{{ emlak.title }}</h2>
+                        <div class="property-info">
+                            <h6>Metre Kare</h6>
+                            <div class="pi-icon">
+                                <i class="flaticon-151-plans"></i>
+                                <span> {{ emlak.square }} </span>
+                            </div>
+                        </div>
+                        <div class="property-info">
+                            <h6>Salon</h6>
+                            <div class="pi-icon">
+                                <i class="flaticon-151-sit-down"></i>
+                                <span> {{ emlak.salon }} </span>
+                            </div>
+                        </div>
+
+                        <div class="property-info">
+                            <h6>Yatak Odası</h6>
+                            <div class="pi-icon">
+                                <i class="flaticon-151-beds"></i>
+                                <span>{{ emlak.yatakOda }}</span>
+                            </div>
+                        </div>
+                        <div class="property-info">
+                            <h6>Banyo</h6>
+                            <div class="pi-icon">
+                                 <i class="flaticon-151-relax"></i>
+                                 <span>{{ emlak.banyo }}</span>
+                            </div>
+                        </div>
+
+                        <div class="property-info">
+                            <h6>Garaj</h6>
+                            <div class="pi-icon">
+                                <i class="flaticon-151-transportation"></i>
+                                <span>{{ emlak.garaj }} </span>
+                            </div>
+                        </div>
+                        <div class="property-info">
+                            <h6>Bina Yaşı</h6>
+                            <div class="pi-icon">
+                                <i class="flaticon-151-houses"></i>
+                                <span> {{ emlak.binaYasi }} </span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <p>{{ emlak.detail | safe }}</p>
+                </div>
+                <div class="col-xl-4 col-lg-5 text-lg-right text-left">
+                    <div class="property-price">
+                        <h2>${{ emlak.price }}</h2>
+                        <p>(Vergiler Harici)</p>
+                        <button class="site-btn"><a href="/">Satın Al</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Property details section end -->
+
+    <!-- Property features slider -->
+    <div class="property-features-slider owl-carousel">
+        <a href="{{ emlak.image.url }}" class="img-popup-gallery">
+            <img src="{{ emlak.image.url }}" alt="">
+            <i class="flaticon-151-reading-glasses"></i>
+        </a>
+        {% for rs in images %}
+        <a href="{{ rs.image.url }}" class="img-popup-gallery">
+            <img src="{{ rs.image.url }}" alt="">
+            <i class="flaticon-151-reading-glasses"></i>
+        </a>
+        {% endfor %}
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

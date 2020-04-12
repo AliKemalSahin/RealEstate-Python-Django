@@ -82,7 +82,7 @@
 
     <div class="container" >
         <div class="section-title st-light">
-            <h2>EVLERİMİZ</h2>
+            <h2>EMLAKLARIMIZ</h2>
         </div>
     </div>
 
@@ -91,7 +91,7 @@
 
         {% for rs in dayproducts %}
             <div class="feature-box">
-            		<a  style="position:relative; z-index: 4;" href="/addtocard/{{ rs.id }}" >
+            		<a  style="position:relative; z-index: 4;" href="/emlak/{{ rs.id }}/{{ rs.slug }}" >     <!-- ilerde buton koy ve hrefine bunu ver  /addtocard/{{ rs.id }} -->
 			            <img src="{{rs.image.url}}" alt="">
 			            <i class="flaticon-151-reading-glasses"></i>
                         <h5 align="center">{{ rs.title }}</h5>
@@ -120,7 +120,7 @@
 
         {% for rs in lastproducts %}
             <div class="feature-box">
-            		<a  style="position:relative; z-index: 4;" href="/addtocard/{{ rs.id }}" >
+            		<a  style="position:relative; z-index: 4;" href="/emlak/{{ rs.id }}/{{ rs.slug }}" >
 			            <img src="{{rs.image.url}}" alt="">
 			            <i class="flaticon-151-reading-glasses"></i>
                         <h5 align="center">{{ rs.title }}</h5>
@@ -147,7 +147,7 @@
 
         {% for rs in onecikan %}
             <div class="feature-box">
-            		<a  style="position:relative; z-index: 4;" href="/addtocard/{{ rs.id }}" >
+            		<a  style="position:relative; z-index: 4;" href="/emlak/{{ rs.id }}/{{ rs.slug }}" >
 			            <img src="{{rs.image.url}}" alt="">
 			            <i class="flaticon-151-reading-glasses"></i>
                         <h5 align="center">{{ rs.title }}</h5>

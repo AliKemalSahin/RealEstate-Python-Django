@@ -50,7 +50,12 @@ class Emlak(models.Model):   # tablomuz
     image = models.ImageField(blank=True,upload_to='images/')     #dosya eklenecek resim
     price = models.FloatField()
     square = models.IntegerField()
-    rooms = models.CharField(blank=True,max_length=5)
+    rooms = models.CharField(blank=True, max_length=5)
+    salon = models.CharField(blank=True,max_length=20)
+    yatakOda = models.CharField(blank=True, max_length=20)
+    banyo = models.CharField(blank=True, max_length=20)
+    garaj = models.CharField(blank=True, max_length=20)
+    binaYasi = models.CharField(blank=True, max_length=20)
     detail = RichTextUploadingField()
     slug = models.SlugField(blank=True,max_length=255)
     status = models.CharField(max_length=10, choices=STATUS)   # yukarda evet hayır verdiğimiz için drowdown menude evet hayır var
