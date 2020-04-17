@@ -32,6 +32,7 @@ urlpatterns = [
     path('category/<int:id>/<slug:slug>/', views.category_products, name='category_products'),
     path('emlak/<int:id>/<slug:slug>/', views.emlak_detail, name='emlak_detail')
 
+
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)   # Adminde yuklenen resimlerin gosterilmesine izin verilmesi

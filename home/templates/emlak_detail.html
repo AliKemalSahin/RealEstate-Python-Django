@@ -7,6 +7,7 @@
 
 {%  block head %}
     <link href='{{ setting.icon.url }}' rel="shortcut icon"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/yildizlar.css' %}">     <!--Yıldız Puan verme için -->
 {% endblock %}
 
 {% block content %}
@@ -124,6 +125,110 @@
         </a>
         {% endfor %}
     </div>
+
+
+
+
+<div class="col-md-12">
+    <div class="row">
+        <div class="col-md-6">
+        <h3>Yorumlar</h3><br>
+            {% for rs in comments %}
+
+                <div><a href="#"><i class="fa fa-user-o"></i><b>{{ rs.user.first_name }}</b> </a> </div>
+                <div><a href="#"><i class="fa fa-clock-o blog-date"></i> {{ rs.create_at }} </a> </div>
+
+                <div class="review-rating pull-right">
+                <i class="fa fa-star{% if rs.rate < 1 %}-o empty{% endif %}"></i>
+                <i class="fa fa-star{% if rs.rate < 2 %}-o empty{% endif %}"></i>
+                <i class="fa fa-star{% if rs.rate < 3 %}-o empty{% endif %}"></i>
+                <i class="fa fa-star{% if rs.rate < 4 %}-o empty{% endif %}"></i>
+                <i class="fa fa-star{% if rs.rate < 5 %}-o empty{% endif %}"></i>
+                </div>
+
+
+                <div><h5>{{ rs.subject }}</h5>
+                        <p>{{ rs.comment }}</p>
+                </div>
+                <hr>
+            {% endfor %}
+        </div>
+
+
+
+    				<div class="col-md-6">
+					<div style="background-color: #F3F3F3" class="contact-info-box">
+						<div class="contact-info">
+                                            {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-{{ message.tags }}"  role="alert">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+						<h5 class="contact-title">EV HAKKINDA GÖRÜSLERINIZ...</h5>
+                        <p>Email Adresiniz Yayinlanmayacaktir...</p>
+                            <form class="contact-form" action="/emlak/addcomment/{{ emlak.id }}" method="post">
+                            {% csrf_token %}
+							<div class="form-field">
+                                <img src="{% static 'img/icons/subject.png' %}" alt="" >
+                                <input class="input" type="text" name="subject" id="id_subject" placeholder="Subject" />
+							</div>
+							<div class="form-field">
+                                <img src="{% static 'img/icons/profile.png' %} " alt="" >
+                                <textarea style="height: 100px" class="input" name="comment" id="id_comment" placeholder="Your Review"></textarea>
+							</div>
+                                        <div class="rate">
+                                            <input type="radio" id="star5" name="rate" value="5" />
+                                            <label for="star5" title="text">5 stars</label>
+                                            <input type="radio" id="star4" name="rate" value="4" />
+                                            <label for="star4" title="text">4 stars</label>
+                                            <input type="radio" id="star3" name="rate" value="3" />
+                                            <label for="star3" title="text">3 stars</label>
+                                            <input type="radio" id="star2" name="rate" value="2" />
+                                            <label for="star2" title="text">2 stars</label>
+                                            <input type="radio" id="star1" name="rate" value="1" />
+                                            <label for="star1" title="text">1 star</label>
+                                          </div>
+
+                            {% if user.id is not None %}
+                                <button class="site-btn">Yorumu Yolla</button>
+                                {% else %}
+                                <br><br>
+                                <h4>Yorum Eklemek Için<a href="/login"> Login </a>Olunuz!</h4>
+                            {% endif %}
+                        </form>
+					    </div>
+                    </div>
+				</div>
+
+    </div>
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
