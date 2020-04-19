@@ -1267,6 +1267,8 @@ Blog page
 .blog-search {
 	position: relative;
 	margin-bottom: 54px;
+	margin-left: -34px;
+
 }
 
 .blog-search input {

@@ -1,0 +1,75 @@
+{% extends 'homebase.html' %}
+{% load static %}
+{% block title %} Emlak Arama Sonuclari {% endblock %}
+{% block keywords %} {{ setting.keywords }}{% endblock %}
+{% block description %} {{ setting.description }} {% endblock %}
+
+
+
+{%  block head %}
+    <link href='{{ setting.icon.url }}' rel="shortcut icon"/>
+{% endblock %}
+
+
+
+{% block content %}
+	<section class="page-top-section set-bg" data-setbg="{% static 'img/page-top-bg/1.jpg'  %}">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="page-top-text text-white">
+						<h2>ŞAHİN EMLAKÇILIK -Arama Sonuçları</h2>
+
+						<h7> Aradığınız Her Şey Burada ! </h7>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="hero-social-warp">
+				<div class="hero-social">
+					<a href=""><i class="fa fa-facebook"></i></a>
+					<a href=""><i class="fa fa-linkedin"></i></a>
+					<a href=""><i class="fa fa-twitter"></i></a>
+					<a href=""><i class="fa fa-youtube-play"></i></a>
+					<a href=""><i class="fa fa-instagram"></i></a>
+				</div>
+        </div>
+	</section>
+    <div  id="breadcrumb">
+    <div class="container">
+        <ul class="breadcrumb">
+            <li><a href="/">Anasayfa  </a> </li>
+          <!--  <li class="active">{{ categorydata.title }}</li>  -->
+
+        </ul>
+    </div>
+    </div>
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <table cellpadding="3" width="1200">
+                    <tr>
+                        <th>Resim</th>
+                        <th>Emlak Adı</th>
+                        <th>Kategori</th>
+                        <th>Fiyat</th>
+                    </tr>
+                    {% for rs in emlaklar %}
+                        <tr>
+                            <td><a href="/emlak/{{ rs.id }}/{{ rs.slug }}"><img style="width: 100px; height: 100px" src="{{ rs.image.url }}" alt="" />></a> </td>
+                            <td><h4><a href="/emlak/{{ rs.id }}/{{ rs.slug }}">{{ rs.title }}</a> </h4> </td>
+                            <td><a href="/category/{{ rs.category.id }}/{{ rs.category.slug }}">{{ rs.category }}</a> </td>
+                            <td><h4>${{ rs.price }}</h4></td>
+                        </tr>
+                    {% endfor %}
+
+                </table>
+            </div>
+        </div>
+    </section>
+
+
+
+
+{% endblock %}

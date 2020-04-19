@@ -9,13 +9,11 @@
 		<div class="nav-switch">
 			<i class="fa fa-bars"></i>
 		</div>
-		<nav class="menu">
+		<nav class="menu col-lg-10">
 			<ul class="main-menu">
 				<li><a href="/">Anasayfa</a></li>
 				<li><a href="/hakkimizda">Hakkımızda</a></li>
-				<li><a href="property.html">Emlaklar</a></li>
 				<li><a href="/referanslar">Referanslar</a></li>
-				<li><a href="blog.html">Haberler</a></li>
 				<li><a href="/iletisim">İletişim</a></li>
                 <li data-dropdown ><a href="#">Alt Kategoriler</a>
                     <div class="dropdown">
@@ -44,8 +42,18 @@
                     </div>
 
                 </li>
+
+
 			</ul>
+                    <div class="col-lg-2">
+					<form class="blog-search" action="/search/" method="post">
+                        {% csrf_token %}
+						<input name="query" type="text" placeholder="Emlak Ara">
+						<button><img src="{% static 'img/search.png' %}" alt=""></button>
+					</form>
+                    </div>
 		</nav>
+
 
 
 	</header>

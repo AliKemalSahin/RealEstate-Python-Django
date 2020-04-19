@@ -1,7 +1,7 @@
 from django.contrib import messages
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
-
+from home.forms import SearchForm
 # Create your views here.
 from emlak.models import Emlak, Category, Images, Comment
 from home.models import Setting,ContactFormu, ContactFormMessage
@@ -25,16 +25,18 @@ def index(request):
 
 def hakkimizda(request):
     setting = Setting.objects.get(pk=1)
-    context = {'setting': setting, 'page': 'hakkimizda'}
+    category = Category.objects.all()
+    context = {'setting': setting,'category': category, 'page': 'hakkimizda'}
     return render(request, 'hakkimizda.html', context)
 
 def referanslar(request):
     setting = Setting.objects.get(pk=1)
-    context = {'setting': setting, 'page': 'hakkimizda'}
+    category = Category.objects.all()
+    context = {'setting': setting,'category': category, 'page': 'hakkimizda'}
     return render(request, 'referanslarimiz.html', context)
 
 def iletisim(request):
-
+    category = Category.objects.all()
     if request.method == "POST":
         form = ContactFormu(request.POST)
         if form.is_valid():
@@ -51,7 +53,7 @@ def iletisim(request):
 
     setting = Setting.objects.get(pk=1)
     form = ContactFormu()
-    context = {'setting': setting, 'form': form}
+    context = {'setting': setting,'category': category, 'form': form}
     return render(request, 'iletisim.html', context)
 
 
@@ -76,3 +78,18 @@ def emlak_detail(request,id,slug):
                'comments': comments,
                }
     return render(request,'emlak_detail.html',context)
+
+def emlak_search(request):
+    if request.method == 'POST':  #form post edildiyse
+        form = SearchForm(request.POST)
+        if form.is_valid():
+            category = Category.objects.all()
+            query = form.cleaned_data['query']   #bilgiyi al
+            emlaklar = Emlak.objects.filter(title__icontains=query) # select * from product where title like %query% demek, icontain büyük kücük ayretmez
+
+            context = {'emlaklar':emlaklar,
+                       'category':category,
+                      }
+            return render(request,'emlak_search.html',context)
+
+    return HttpResponseRedirect('/')
