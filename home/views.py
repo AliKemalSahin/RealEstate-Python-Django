@@ -5,7 +5,7 @@ from home.forms import SearchForm
 # Create your views here.
 from emlak.models import Emlak, Category, Images, Comment
 from home.models import Setting,ContactFormu, ContactFormMessage
-
+import json
 
 def index(request):
     setting = Setting.objects.get(pk=1)
@@ -84,12 +84,34 @@ def emlak_search(request):
         form = SearchForm(request.POST)
         if form.is_valid():
             category = Category.objects.all()
-            query = form.cleaned_data['query']   #bilgiyi al
-            emlaklar = Emlak.objects.filter(title__icontains=query) # select * from product where title like %query% demek, icontain büyük kücük ayretmez
 
-            context = {'emlaklar':emlaklar,
-                       'category':category,
-                      }
-            return render(request,'emlak_search.html',context)
+            catid = form.cleaned_data['catid']
+            query = form.cleaned_data['query']
+
+            if catid == 0:
+                emlaklar = Emlak.objects.filter(title__icontains=query) # select * from product where title like %query% demek, icontain büyük kücük ayretmez
+            else:
+                emlaklar = Emlak.objects.filter(title__icontains=query, category_id=catid)
+
+
+            context = {'emlaklar': emlaklar,
+                       'category': category,
+                       }
+            return render(request, 'emlak_search.html', context)
 
     return HttpResponseRedirect('/')
+
+def emlak_search_auto(request):
+    if request.is_ajax():
+        q = request.GET.get('term', '')
+        emlak = Emlak.objects.filter(title__icontains=q)
+        results = []
+        for rs in emlak:
+            emlak_json = {}
+            emlak_json = rs.title
+            results.append(emlak_json)
+        data = json.dumps(results)
+    else:
+        data = 'fail'
+    mimetype = 'application/json'
+    return HttpResponse(data, mimetype)

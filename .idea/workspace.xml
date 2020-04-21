@@ -3,11 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="45c69555-8958-43be-a92e-0ae1502b687d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/emlakcilik/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/emlakcilik/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/home/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/emlak_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/emlak_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/emlak_search.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/emlak_search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/footer.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/templates/hakkimizda.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/hakkimizda.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/homebase.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/homebase.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/templates/iletisim.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/iletisim.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/templates/referanslarimiz.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/referanslarimiz.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/views.py" afterDir="false" />
@@ -173,6 +177,12 @@
       <workItem from="1587140555252" duration="8368000" />
       <workItem from="1587243575667" duration="1095000" />
       <workItem from="1587326447993" duration="5284000" />
+      <workItem from="1587331804439" duration="22000" />
+      <workItem from="1587399199068" duration="6304000" />
+      <workItem from="1587408107712" duration="2361000" />
+      <workItem from="1587478604011" duration="699000" />
+      <workItem from="1587487101016" duration="2439000" />
+      <workItem from="1587496413772" duration="1140000" />
     </task>
     <task id="LOCAL-00001" summary="9.cu videooo">
       <created>1585330646967</created>

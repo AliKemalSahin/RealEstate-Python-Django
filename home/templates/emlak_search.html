@@ -57,7 +57,7 @@
                     </tr>
                     {% for rs in emlaklar %}
                         <tr>
-                            <td><a href="/emlak/{{ rs.id }}/{{ rs.slug }}"><img style="width: 100px; height: 100px" src="{{ rs.image.url }}" alt="" />></a> </td>
+                            <td><a href="/emlak/{{ rs.id }}/{{ rs.slug }}"><img style="width: 150px; height: 100px" src="{{ rs.image.url }}" alt="" />></a> </td>
                             <td><h4><a href="/emlak/{{ rs.id }}/{{ rs.slug }}">{{ rs.title }}</a> </h4> </td>
                             <td><a href="/category/{{ rs.category.id }}/{{ rs.category.slug }}">{{ rs.category }}</a> </td>
                             <td><h4>${{ rs.price }}</h4></td>
