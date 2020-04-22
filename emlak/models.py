@@ -3,6 +3,7 @@ from django.db import models
 
 # Create your models here.
 from django.forms import ModelForm
+from django.urls import reverse
 from django.utils.safestring import mark_safe
 from ckeditor_uploader.fields import RichTextUploadingField
 from mptt.fields import TreeForeignKey
@@ -19,7 +20,7 @@ class Category(MPTTModel):   # tablomuz
     description = models.CharField(blank=True,max_length=255)     #alan türü
     image = models.ImageField(blank=True,upload_to='images/')     #dosya eklenecek resim
     status = models.CharField(max_length=10, choices=STATUS)   # yukarda evet hayır verdiğimiz için drowdown menude evet hayır var
-    slug = models.SlugField()     #adres satırında id yerine metinsel bir şekilde çagırmak icin category/3
+    slug = models.SlugField(null=False, unique=True)     #adres satırında id yerine metinsel bir şekilde çagırmak icin category/3
     parent = TreeForeignKey('self',blank=True, null=True, related_name='children', on_delete=models.CASCADE)   # kendisiyle ilişkili(kendi id)
     create_at = models.DateTimeField(auto_now_add=True)   # ne zaman oluşturuldu
     update_at = models.DateTimeField(auto_now_add=True)   # ne zaman güncellendi
@@ -40,6 +41,9 @@ class Category(MPTTModel):   # tablomuz
         return mark_safe('<img src="{}" height="50"/>'.format(self.image.url))   # bu html kodu ile resimler gözüküyor
     image_tag.short_description = "Image"
 
+    def get_absolute_url(self):
+        return reverse('category_detail', kwargs={'slug': self.slug})
+
 class Emlak(models.Model):   # tablomuz
     STATUS = (                                                           # one to one -> user ın üye kaydı ve kimlik bilgisi
         ('True','Evet'),                                                   # many to one -> danışman ve öğrenci (her öğrencinin bir tane danışmanı vardır)
@@ -59,7 +63,7 @@ class Emlak(models.Model):   # tablomuz
     garaj = models.CharField(blank=True, max_length=20)
     binaYasi = models.CharField(blank=True, max_length=20)
     detail = RichTextUploadingField()
-    slug = models.SlugField(blank=True,max_length=255)
+    slug = models.SlugField(null=False, unique=True)
     status = models.CharField(max_length=10, choices=STATUS)   # yukarda evet hayır verdiğimiz için drowdown menude evet hayır var
 
     create_at = models.DateTimeField(auto_now_add=True)   # ne zaman oluşturuldu
@@ -71,6 +75,8 @@ class Emlak(models.Model):   # tablomuz
         return mark_safe('<img src="{}" height="50"/>'.format(self.image.url))   # bu html kodu ile resimler gözüküyor
     image_tag.short_description = "Image"
 
+    def get_absolute_url(self):
+        return reverse('emlak_detail', kwargs={'slug': self.slug})
 class Images(models.Model):
     emlak = models.ForeignKey(Emlak,on_delete=models.CASCADE)   # Cascade --> ilişkili oldugu(bağlı) emlak silinirse buda silinir demektir havada kalmasın diye
     title = models.CharField(max_length=50, blank=True) # blank= True null olabilir dedik                         # emlak id ile bağlamış olduk
