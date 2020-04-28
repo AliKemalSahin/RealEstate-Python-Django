@@ -1,0 +1,89 @@
+{% extends 'homebase.html' %}
+{% load static %}
+{% block title %} Emlak Giris {% endblock %}
+{% block keywords %} {{ setting.keywords }}{% endblock %}
+{% block description %} {{ setting.description }} {% endblock %}
+
+
+
+{%  block head %}
+    <link href='{{ setting.icon.url }}' rel="shortcut icon"/>
+
+{% endblock %}
+
+
+
+{% block content %}
+	<section class="page-top-section set-bg" data-setbg="{% static 'img/page-top-bg/1.jpg'  %}">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="page-top-text text-white">
+						<h2>ŞAHİN EMLAKÇILIK -Giriş Sayfası</h2>
+
+						<h7> Sayfamızın Güzelliklerinden Yararlanmak İçin Giriş Yapın ! </h7>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="hero-social-warp">
+				<div class="hero-social">
+					<a href=""><i class="fa fa-facebook"></i></a>
+					<a href=""><i class="fa fa-linkedin"></i></a>
+					<a href=""><i class="fa fa-twitter"></i></a>
+					<a href=""><i class="fa fa-youtube-play"></i></a>
+					<a href=""><i class="fa fa-instagram"></i></a>
+				</div>
+        </div>
+	</section>
+    <div  id="breadcrumb">
+    <div class="container">
+        <ul class="breadcrumb">
+            <li><a href="/">Anasayfa</a> </li>
+            <li class="active">/Login</li>
+
+        </ul>
+    </div>
+    </div>
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Giriş Formu</h1><hr>
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-{{ message.tags }}" role="alert">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                        <form class="contact-form" action="" method="post">
+                            {% csrf_token %}
+							<div class="form-field">
+								<img src="{% static 'img/icons/profile.png' %}" alt="" >
+								<input type="text" name="username" placeholder="Kullanıcı Adı">
+							</div>
+
+							<div class="form-field">
+								<img src="{% static 'img/icons/subject.png'%}" alt="" >
+								<input type="password" name="password"  placeholder="Şifre">
+							</div>
+							<button type="submit" value="Login" class="site-btn">GİRİŞ</button>
+
+						</form>
+                        <br> <br>
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+{% endblock %}

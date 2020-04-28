@@ -5,13 +5,19 @@
 <!-- Header section -->
 	<header class="header-section">
         <link rel="stylesheet" href="{% static 'css/altCategory.css' %}">
-		<!-- logo -->
-		<a href="index.html" class="site-logo">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    		<a href="index.html" class="site-logo">
 			<img src="{% static 'img/logo.png'%}" alt="">
 		</a>
 		<div class="nav-switch">
 			<i class="fa fa-bars"></i>
 		</div>
+		<!-- login -->
+
+
+
+
 
 
 <script>
@@ -70,6 +76,8 @@
                 </li>
 
 
+
+
 			</ul>
                     <div class="col-lg-2">
 					<form class="blog-search" action="/search/" method="POST">
@@ -98,6 +106,43 @@
 					</form>
                     </div>
 		</nav>
+
+
+
+<div  class="w3-container">
+
+  <div style="margin-top: -180px; margin-right: 100px" class="w3-dropdown-hover w3-right">
+          {% if user.id is not None %}
+             <button class="w3-button w3-green">{{ user.first_name }}</button>
+              <img  style="margin-right: 7px;width: 30px"  src="{% static 'img/icons/profile.png' %} " alt="" >
+            <div class="w3-dropdown-content w3-bar-block w3-border" style="right:0">
+              <a href="#" class="w3-bar-item w3-button"><i class="fa fa-user-o"></i> Hesabım</a>
+              <a href="#" class="w3-bar-item w3-button"><i class="fa fa-heart-o"></i> İsteklerim</a>
+              <a href="#" class="w3-bar-item w3-button"><i class="fa fa-exchange"></i> Tercihlerim</a>
+              <a href="#" class="w3-bar-item w3-button"><i class="fa fa-check"></i> Yorumlarım</a>
+              <a style="background-color: #e83e8c " href="/logout/" class="w3-bar-item w3-button"><i class="fa fa-unlock"></i>  Çıkış </a>
+            </div>
+          {% else %}
+              <button class="w3-button w3-green"><a  href="/login/">Giriş</a></button> <button class="w3-button w3-green"><a href="/join/"> Kayıt </a></button>
+              <img style="margin-right: 7px;width: 30px"  src="{% static 'img/icons/profile.png' %} " alt="" >
+          {% endif %}
+
+  </div>
+
+  <div class="w3-clear"></div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
 
 
 

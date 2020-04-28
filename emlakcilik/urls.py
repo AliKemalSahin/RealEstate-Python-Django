@@ -33,6 +33,8 @@ urlpatterns = [
     path('emlak/<int:id>/<slug:slug>/', views.emlak_detail, name='emlak_detail'),
     path('search/', views.emlak_search, name='emlak_search'),
     path('search_auto/', views.emlak_search_auto, name='emlak_search_auto'),
+    path('logout/', views.logout_view, name='logout_view'),
+    path('login/', views.login_view, name='login_view'),
 
 
 
