@@ -2,7 +2,7 @@ from django.contrib import messages
 from django.contrib.auth import logout, authenticate, login
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
-from home.forms import SearchForm
+from home.forms import SearchForm, KayitForm
 # Create your views here.
 from emlak.models import Emlak, Category, Images, Comment
 from home.models import Setting,ContactFormu, ContactFormMessage
@@ -136,3 +136,22 @@ def login_view(request):
     category = Category.objects.all()
     context = {'category': category, }
     return render(request, 'login.html', context)
+
+
+def kayit_view(request):
+    if request.method == 'POST':
+        form = KayitForm(request.POST)
+        if form.is_valid():      # burda if else yapmamıza gerek yok zaten kaydedilen yollanıyor.Validation yapılıyor burda.
+            form.save()
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password1')
+            user = authenticate(username=username, password=password)
+            login(request, user)
+            return HttpResponseRedirect('/')
+
+    form = KayitForm()
+    category = Category.objects.all()
+    context = {'category': category,
+               'form': form,
+               }
+    return render(request, 'kayit.html', context)

@@ -1,6 +1,6 @@
 {% extends 'homebase.html' %}
 {% load static %}
-{% block title %} Emlak Giris {% endblock %}
+{% block title %} Emlak Kayıt {% endblock %}
 {% block keywords %} {{ setting.keywords }}{% endblock %}
 {% block description %} {{ setting.description }} {% endblock %}
 
@@ -19,9 +19,9 @@
 			<div class="row">
 				<div class="col-lg-6">
 					<div class="page-top-text text-white">
-						<h2>ŞAHİN EMLAKÇILIK -Giriş Sayfası</h2>
+						<h2>ŞAHİN EMLAKÇILIK -Kayıt Sayfası</h2>
 
-						<h7> Sayfamızın Güzelliklerinden Yararlanmak İçin Giriş Yapın ! </h7>
+						<h7> Sayfamızın Güzelliklerinden Yararlanmak İçin Kayıt Olun ! </h7>
 					</div>
 				</div>
 			</div>
@@ -40,7 +40,7 @@
     <div class="container">
         <ul class="breadcrumb">
             <li><a href="/">Anasayfa</a> </li>
-            <li class="active">/Login</li>
+            <li class="active">/Kayıt</li>
 
         </ul>
     </div>
@@ -50,7 +50,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h1>Giriş Formu</h1><hr>
+                    <h1>Kayıt Formu</h1><hr>
                     {% if messages %}
                         {% for message in messages %}
                             <div class="alert alert-{{ message.tags }}" role="alert">
@@ -58,23 +58,26 @@
                             </div>
                         {% endfor %}
                     {% endif %}
-                        <form class="contact-form" action="" method="post">
-                            {% csrf_token %}
-							<div class="form-field">
-								<img src="{% static 'img/icons/profile.png' %}" alt="" >
-								<input type="text" name="username" placeholder="Kullanıcı Adı">
-							</div>
 
-							<div class="form-field">
-								<img src="{% static 'img/icons/subject.png'%}" alt="" >
-								<input type="password" name="password"  placeholder="Şifre">
-							</div>
-							<button type="submit" value="Login" class="site-btn">GİRİŞ</button>
-
-						</form>
-                        <br> <br><hr>
-
-
+                    <form method="post">
+                        {% csrf_token %}
+                        {% for field in form %}
+                            <p>
+                            {{ field.label_tag }}<br>
+                            {{ field }}
+                            {% if field.help_text %}
+                                <small style="color: grey">{{ field.help_text }}</small>
+                            {% endif %}
+                            {% for error in field.errors %}
+                                <p style="color: red">{{ error }}</p>
+                            {% endfor %}
+                            </p>
+                        
+                        {% endfor %}
+                    <button class="site-btn" type="submit">Kayıt Ol</button>
+                        
+                    </form>
+                    <br><br><hr>
 
 
 
