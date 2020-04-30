@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'user.apps.UserConfig',
     'emlak.apps.EmlakConfig',
     'home.apps.HomeConfig',
     'django.contrib.admin',

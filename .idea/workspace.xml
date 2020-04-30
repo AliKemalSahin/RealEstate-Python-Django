@@ -4,8 +4,9 @@
     <list default="true" id="45c69555-8958-43be-a92e-0ae1502b687d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emlakcilik/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/emlakcilik/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emlakcilik/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/emlakcilik/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/header.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../firstProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../firstProject/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -63,12 +64,13 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/home/templates" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/user" />
     <property name="run.code.analysis.last.selected.profile" value="aDefault" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Django\emlakcilik\user" />
       <recent name="C:\Django\emlakcilik\home\templates" />
       <recent name="C:\Django\emlakcilik\ev" />
     </key>
@@ -182,7 +184,8 @@
       <workItem from="1588080483385" duration="2775000" />
       <workItem from="1588087876950" duration="4445000" />
       <workItem from="1588119465487" duration="4976000" />
-      <workItem from="1588170897600" duration="2498000" />
+      <workItem from="1588170897600" duration="3099000" />
+      <workItem from="1588201874455" duration="7286000" />
     </task>
     <task id="LOCAL-00001" summary="9.cu videooo">
       <created>1585330646967</created>
@@ -274,10 +277,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="0" y="0" width="738" height="864" key="find.popup/0.0.1536.864@0.0.1536.864" timestamp="1583437956447" />
-    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1587041849814">
+    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1588204559716">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1587041849814" />
+    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1588204559716" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/emlakcilik$Test__home_templates.coverage" NAME="Test: home.templates Coverage Results" MODIFIED="1586548831163" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />

@@ -28,6 +28,7 @@ urlpatterns = [
     path('home',include('home.urls')),
     path('emlak', include(('emlak.urls'))),
     path('admin/', admin.site.urls),
+    path('user/', include('user.urls')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('category/<int:id>/<slug:slug>/', views.category_products, name='category_products'),
     path('emlak/<int:id>/<slug:slug>/', views.emlak_detail, name='emlak_detail'),
