@@ -7,7 +7,8 @@ from . import views
 
 urlpatterns = [
     path('',views.index, name='index'),
-    #path('/addcomment/<int:id>', views.addcomment, name='addcomment') # baştaki slash ı kaldırınca yorum yapma hata veriyor hocaya sor..
+    path('update/', views.user_update , name='user_update'),
+    path('password/', views.change_password , name='change_password'),
 
 
 ]
