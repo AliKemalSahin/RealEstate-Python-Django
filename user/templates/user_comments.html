@@ -1,0 +1,126 @@
+{% extends 'homebase.html' %}
+{% load static %}
+{% block title %} {{ profile.user_name}} Profil {% endblock %}
+{% block keywords %} {{ setting.keywords }}{% endblock %}
+{% block description %} {{ setting.description }} {% endblock %}
+
+
+
+{%  block head %}
+    <link href='{{ setting.icon.url }}' rel="shortcut icon"/>
+
+{% endblock %}
+
+
+
+{% block content %}
+	<section class="page-top-section set-bg" data-setbg="{% static 'img/page-top-bg/1.jpg'  %}">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="page-top-text text-white">
+						<h2>ŞAHİN EMLAKÇILIK -Kullanıcı Sayfası</h2>
+
+						<h7> Şuan da Kendi Bölümünüzdesiniz ! </h7>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="hero-social-warp">
+				<div class="hero-social">
+					<a href=""><i class="fa fa-facebook"></i></a>
+					<a href=""><i class="fa fa-linkedin"></i></a>
+					<a href=""><i class="fa fa-twitter"></i></a>
+					<a href=""><i class="fa fa-youtube-play"></i></a>
+					<a href=""><i class="fa fa-instagram"></i></a>
+				</div>
+        </div>
+	</section>
+    <div  id="breadcrumb">
+    <div class="container">
+        <ul class="breadcrumb">
+            <li><a href="/">Anasayfa</a> </li>
+            <li class="active">/User Comments</li>
+
+        </ul>
+    </div>
+    </div>
+
+
+    <section>
+        <div class="container">
+            <div class="row ">
+                <div class="col-md-3">
+                        {% include "user_panel.html" %}
+                </div>
+                <div class="col-md-9">
+                    <div class="section-title">
+                        <h1 class="section-title">Kullanıcı Yorumları</h1><hr style="border-color: grey">
+                    </div>
+
+
+                {% if messages %}
+                    {% for message in messages %}
+                        <div style="color: #d43f3a; font-size:medium">
+                            <div class="alert alert-{{ message.tags }}" role="alert">
+                                    {{ message|safe }}
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+
+
+
+                    <table class="table-dark table">
+                        <tr>
+                            <th class="text-left">Emlak</th>
+                            <th class="text-left">Puan</th>
+                            <th class="text-left">Konu</th>
+                            <th class="text-left">Yorum</th>
+                            <th class="text-left">Durum</th>
+                            <th class="text-left">Tarih</th>
+                            <th class="text-left">Detaylar</th>
+                        </tr>
+                        {% for rs in comments %}
+                            <tr>
+                                <td class="text-left">
+                                  <strong>  <a href="/emlak/{{ rs.emlak_id }}/{{ rs.emlak.slug }}">{{ rs.emlak.title }}</a></strong>
+                                </td>
+                                <td class="text-left">{{ rs.rate }}</td>
+                                <td class="text-left">{{ rs.subject }}</td>
+                                <td class="text-left">{{ rs.comment }}</td>
+                                <td class="text-left">{{ rs.status }}</td>
+                                <td class="text-left">{{ rs.create_at }}</td>
+                                <td class="text-left"><a class="site-btn" href="/user/deletecomment/{{ rs.id }}" onclick="return confirm('Yorum Silinecek! Emin misin?')">SİL</a></td>
+
+                            </tr>
+                        {% endfor %}
+                    </table>
+
+
+
+
+
+                </div>
+            </div>
+        </div><br><br><br>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
