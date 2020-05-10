@@ -5,7 +5,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.contrib import messages
 # Create your views here.
-from emlak.models import Category,Comment
+from emlak.models import Category, Comment, EmlakForm, Emlak
 from home.models import UserProfile
 from user.forms import UserUpdateForm, ProfileUpdateForm
 
@@ -79,3 +79,96 @@ def deletecomment(request,id):
     Comment.objects.filter(id=id, user_id=current_user.id).delete()  # güvenlik açığını önlemek icin baştaki id yi alıyoruz
     messages.error(request, 'Yorumunuz Silindi.')
     return HttpResponseRedirect('/user/comments')
+
+@login_required(login_url='/login')
+def ilanVer(request):
+    if request.method == 'POST':
+        form = EmlakForm(request.POST, request.FILES)
+        if form.is_valid():
+            current_user = request.user
+            data = Emlak()
+            data.category = form.cleaned_data['category']
+            data.user_id = current_user.id  # eklenmesi gerekebilir
+            data.title = form.cleaned_data['title']
+            data.slug = form.cleaned_data['slug']
+            data.keywords = form.cleaned_data['keywords']
+            data.description = form.cleaned_data['description']
+            data.image = form.cleaned_data['image']
+            data.price = form.cleaned_data['price']
+            data.square = form.cleaned_data['square']
+            data.rooms = form.cleaned_data['rooms']
+            data.salon = form.cleaned_data['salon']
+            data.yatakOda = form.cleaned_data['yatakOda']
+            data.banyo = form.cleaned_data['banyo']
+            data.garaj = form.cleaned_data['garaj']
+            data.binaYasi = form.cleaned_data['binaYasi']
+            data.detail = form.cleaned_data['detail']
+            data.status = 'False'
+            data.save()
+            messages.success(request,'İlanınız Başarıyla Eklendi.')
+            return HttpResponseRedirect('/user/ilanlarim')
+
+        else:
+            messages.success(request,'Hatalı Giriş : ' + str(form.errors))
+            return HttpResponseRedirect('/user/ilanVer')
+
+    else:
+        category = Category.objects.all()
+        form = EmlakForm()
+        context = {
+            'category' : category,
+            'form' : form,
+        }
+        return  render(request, 'user_ilanVer.html', context)
+
+
+@login_required(login_url='/login')
+def ilanlarim(request):                 # hocada contents
+    category = Category.objects.all()
+    current_user = request.user
+    ilanlar = Emlak.objects.filter(user_id = current_user.id)
+    context = {
+        'category' : category,
+        'ilanlar' : ilanlar,
+    }
+    return render(request, 'user_ilanlarim.html',context)
+
+@login_required(login_url='/login')
+def ilanDuzenle(request,id):
+    emlak = Emlak.objects.get(id=id)
+    if request.method == 'POST':
+        form = EmlakForm(request.POST, request.FILES, instance=emlak)
+        if form.is_valid():
+            form.save()
+            messages.success(request,'İlanınız Başarıyla Güncellendi.')
+            return HttpResponseRedirect('/user/ilanlarim')
+        else:
+            messages.success(request,'İçerik Hatası : '+ str(form.errors))
+            return HttpResponseRedirect('/user/ilanDuzenle')
+
+    else:
+        category = Category.objects.all()
+        form = EmlakForm(instance=emlak)
+        context = {
+            'category' : category,
+            'form' : form,
+        }
+        return render(request,'user_ilanVer.html',context)
+@login_required(login_url='/login')
+def ilanSil(request, id):
+    current_user = request.user
+    Emlak.objects.filter(id=id, user_id=current_user.id).delete()
+    messages.success(request,'İlan Silindi!')
+    return HttpResponseRedirect('/user/ilanlarim')
+
+
+
+
+
+
+
+
+
+
+
+

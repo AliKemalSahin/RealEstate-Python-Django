@@ -1,8 +1,9 @@
+from ckeditor.widgets import CKEditorWidget
 from django.contrib.auth.models import User
 from django.db import models
 
 # Create your models here.
-from django.forms import ModelForm
+from django.forms import ModelForm, Select, TextInput, Textarea, FileInput
 from django.urls import reverse
 from django.utils.safestring import mark_safe
 from ckeditor_uploader.fields import RichTextUploadingField
@@ -34,7 +35,7 @@ class Category(MPTTModel):   # tablomuz
         while k is not None:
             full_path.append(k.title)
             k = k.parent
-        return ' -> '.join(full_path[::-1])
+        return ' / '.join(full_path[::-1])
 
 
     def image_tag(self):   # Adminde yuklenen resimlerin gosterilmesi
@@ -66,6 +67,8 @@ class Emlak(models.Model):   # tablomuz
     slug = models.SlugField(null=False, unique=True)
     status = models.CharField(max_length=10, choices=STATUS)   # yukarda evet hayır verdiğimiz için drowdown menude evet hayır var
 
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+
     create_at = models.DateTimeField(auto_now_add=True)   # ne zaman oluşturuldu
     update_at = models.DateTimeField(auto_now_add=True)   # ne zaman güncellendi
 
@@ -77,6 +80,31 @@ class Emlak(models.Model):   # tablomuz
 
     def get_absolute_url(self):
         return reverse('emlak_detail', kwargs={'slug': self.slug})
+
+class EmlakForm(ModelForm):
+    class Meta:
+        model = Emlak
+        fields = ['category','title','keywords','description','slug','image','price','square','rooms','salon','yatakOda','banyo','garaj','binaYasi','detail']
+        widgets = {
+            'category' : Select(attrs={'class': 'input', 'placeholder': 'category'}),
+            'title' : TextInput(attrs={'class': 'input', 'placeholder': 'Başlık'}),
+            'slug': TextInput(attrs={'class': 'input', 'placeholder': 'slug'}),
+            'keywords' : TextInput(attrs={'class': 'input', 'placeholder': 'keywords'}),
+            'description' : TextInput(attrs={'class': 'input', 'placeholder': 'description'}),
+            'image' : FileInput(attrs={'class': 'input', 'placeholder': 'image'}),
+            'price' : TextInput(attrs={'class': 'input', 'placeholder': 'Ücret'}),
+            'square' : TextInput(attrs={'class': 'input', 'placeholder': 'Metre Kare'}),
+            'rooms' : TextInput(attrs={'class': 'input', 'placeholder': 'Oda Sayısı'}),
+            'salon' : TextInput(attrs={'class': 'input', 'placeholder': 'Salon Sayısı'}),
+            'yatakOda' : TextInput(attrs={'class': 'input', 'placeholder': 'Yatak Oda Sayısı'}),
+            'banyo' : TextInput(attrs={'class': 'input', 'placeholder': 'Banyo Sayısı'}),
+            'garaj' : TextInput(attrs={'class': 'input', 'placeholder': 'Garaj Sayısı'}),
+            'binaYasi' : TextInput(attrs={'class': 'input', 'placeholder': 'Bina Yaşı'}),
+            'detail' : CKEditorWidget(),
+
+        }
+
+
 class Images(models.Model):
     emlak = models.ForeignKey(Emlak,on_delete=models.CASCADE)   # Cascade --> ilişkili oldugu(bağlı) emlak silinirse buda silinir demektir havada kalmasın diye
     title = models.CharField(max_length=50, blank=True) # blank= True null olabilir dedik                         # emlak id ile bağlamış olduk

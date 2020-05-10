@@ -15,9 +15,10 @@ def index(request):
     #context = {'text': text}
     sliderdata = Emlak.objects.all()[:3] #gereksiz yere tüm veriyi getirmemek için :4 tane aldık
     category = Category.objects.all()
-    dayproducts = Emlak.objects.all()[:4]
-    lastproducts = Emlak.objects.all().order_by('-id')[:4]
-    onecikan = Emlak.objects.all().order_by('?')[:4]
+
+    dayproducts = Emlak.objects.filter(status='True')
+    lastproducts = Emlak.objects.filter(status='True').order_by('-id')[:4]
+    onecikan = Emlak.objects.filter(status='True').order_by('?')[:4]
 
     context = {'setting': setting,'category': category, 'page': 'home', 'sliderdata':sliderdata,
                'dayproducts':dayproducts,'lastproducts':lastproducts,'onecikan':onecikan, }
@@ -62,7 +63,7 @@ def iletisim(request):
 def category_products(request,id,slug):
     category = Category.objects.all()
     categorydata = Category.objects.get(pk=id)
-    emlaklar = Emlak.objects.filter(category_id=id)
+    emlaklar = Emlak.objects.filter(category_id=id, status='True')
     context = {'emlaklar':emlaklar,'category':category,'categorydata':categorydata}
     return render(request,'emlaklar.html',context)
 
@@ -90,9 +91,9 @@ def emlak_search(request):
             query = form.cleaned_data['query']
 
             if catid == 0:
-                emlaklar = Emlak.objects.filter(title__icontains=query) # select * from product where title like %query% demek, icontain büyük kücük ayretmez
+                emlaklar = Emlak.objects.filter(title__icontains=query, status='True') # select * from product where title like %query% demek, icontain büyük kücük ayretmez
             else:
-                emlaklar = Emlak.objects.filter(title__icontains=query, category_id=catid)
+                emlaklar = Emlak.objects.filter(title__icontains=query, category_id=catid, status='True')
 
 
             context = {'emlaklar': emlaklar,
@@ -105,7 +106,7 @@ def emlak_search(request):
 def emlak_search_auto(request):
     if request.is_ajax():
         q = request.GET.get('term', '')
-        emlak = Emlak.objects.filter(title__icontains=q)
+        emlak = Emlak.objects.filter(title__icontains=q,status='True')
         results = []
         for rs in emlak:
             emlak_json = {}

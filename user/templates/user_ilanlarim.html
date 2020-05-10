@@ -1,0 +1,147 @@
+{% extends 'homebase.html' %}
+{% load static %}
+{% block title %} {{ profile.user_name}} Profil {% endblock %}
+{% block keywords %} {{ setting.keywords }}{% endblock %}
+{% block description %} {{ setting.description }} {% endblock %}
+
+
+
+{%  block head %}
+    <link href='{{ setting.icon.url }}' rel="shortcut icon"/>
+
+{% endblock %}
+
+
+
+{% block content %}
+	<section class="page-top-section set-bg" data-setbg="{% static 'img/page-top-bg/1.jpg'  %}">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="page-top-text text-white">
+						<h2>ŞAHİN EMLAKÇILIK -Kullanıcı Sayfası</h2>
+
+						<h7> Şuan da İlanlar Bölümünüzdesiniz ! </h7>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="hero-social-warp">
+				<div class="hero-social">
+					<a href=""><i class="fa fa-facebook"></i></a>
+					<a href=""><i class="fa fa-linkedin"></i></a>
+					<a href=""><i class="fa fa-twitter"></i></a>
+					<a href=""><i class="fa fa-youtube-play"></i></a>
+					<a href=""><i class="fa fa-instagram"></i></a>
+				</div>
+        </div>
+	</section>
+    <div  id="breadcrumb">
+    <div class="container">
+        <ul class="breadcrumb">
+            <li><a href="/">Anasayfa</a> </li>
+            <li class="active">/User İlanlar</li>
+
+        </ul>
+    </div>
+    </div>
+
+
+    <section>
+        <div class="container">
+            <div class="row ">
+                <div class="col-md-2.5">
+                        {% include "user_panel.html" %}
+                </div>
+                <div class="col-md-9">
+                    <div class="section-title">
+                        <h1 class="section-title">Kullanıcı İlanları</h1><hr style="border-color: grey">
+                    </div>
+
+
+                {% if messages %}
+                    {% for message in messages %}
+                        <div style="color: #d43f3a; font-size:medium">
+                            <div class="alert alert-{{ message.tags }}" role="alert">
+                                    {{ message|safe }}
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+
+
+
+                    <table class="table-dark table">
+                        <tr>
+                            <th class="text-left">Image</th>
+                            <th class="text-left">Title</th>
+                            <th class="text-left">Category</th>
+                            <th class="text-left">Ücret</th>
+                            <th class="text-left">Mt2</th>
+                            <th class="text-left">Odalar</th>
+                            <th class="text-left">Salon</th>
+                            <th class="text-left">Yatak Odası</th>
+                            <th class="text-left">Banyo</th>
+                            <th class="text-left">Garaj</th>
+                            <th class="text-left">Bina Yaşı</th>
+                            <th class="text-left">Status</th>
+                        </tr>
+                        {% for rs in ilanlar %}
+                            <tr>
+                                <td class="text-left">
+                                    <a href="/emlak/{{ rs.id }}/{{ rs.slug }}">
+                                        <img src="{{ rs.image.url }}" style="height: 30px;">
+                                    </a>
+                                </td>
+                                <td class="text-left">
+                                    <a href="/emlak/{{ rs.id }}/{{ rs.slug }}">
+                                        {{ rs.title }}
+                                    </a>
+                                </td>
+                                <td class="text-left">{{ rs.category }}</td>
+                                <td class="text-left">{{ rs.price }}</td>
+                                <td class="text-left">{{ rs.square }}</td>
+                                <td class="text-left">{{ rs.rooms }}</td>
+                                <td class="text-left">{{ rs.salon }}</td>
+                                <td class="text-left">{{ rs.yatakOda }}</td>
+                                <td class="text-left">{{ rs.banyo }}</td>
+                                <td class="text-left">{{ rs.garaj }}</td>
+                                <td class="text-left">{{ rs.binaYasi }}</td>
+                                <td class="text-left">{{ rs.status }}</td>
+                                <td><button><a href="/user/ilanDuzenle/{{ rs.id }}">Düzenle</a></button></td>
+                                <td class="text-left"><button><a href="/user/ilanSil/{{ rs.id }}" onclick="return confirm('İlan Silinecek! Emin misin?')">Sil</a></button></td>
+
+
+
+                            </tr>
+
+                        {% endfor %}
+                    </table>
+
+
+
+
+
+                </div>
+            </div>
+        </div><br><br><br>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
