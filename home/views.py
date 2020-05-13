@@ -5,7 +5,7 @@ from django.shortcuts import render
 from home.forms import SearchForm, KayitForm
 # Create your views here.
 from emlak.models import Emlak, Category, Images, Comment
-from home.models import Setting,ContactFormu, ContactFormMessage
+from home.models import Setting, ContactFormu, ContactFormMessage, UserProfile
 import json
 
 def index(request):
@@ -148,6 +148,13 @@ def kayit_view(request):
             password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=password)
             login(request, user)
+
+            current_user = request.user
+            data = UserProfile()
+            data.user_id = current_user.id
+            data.image = "images/users/user.png"
+            data.save()
+
             return HttpResponseRedirect('/')
 
     form = KayitForm()
