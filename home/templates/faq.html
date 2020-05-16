@@ -1,0 +1,78 @@
+{% extends 'homebase.html' %}
+{% load static %}
+{% block title %} Sıkça Sorulan Sorular {% endblock %}
+{% block keywords %}{% endblock %}
+{% block description %} {% endblock %}
+
+
+
+{%  block head %}
+    <link href='{{ setting.icon.url }}' rel="shortcut icon"/>
+      <script>
+  $( function() {
+    $( "#accordion" ).accordion({
+      collapsible: true
+    });
+  } );
+  </script>
+{% endblock %}
+
+
+
+{% block content %}
+	<section class="page-top-section set-bg" data-setbg="{% static 'img/page-top-bg/1.jpg'  %}">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="page-top-text text-white">
+						<h2>ŞAHİN EMLAKÇILIK -Sıkça Sorulan Sorular</h2>
+
+						<h7> Aradığınız tüm cevaplar burada ! </h7>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="hero-social-warp">
+				<div class="hero-social">
+					<a href=""><i class="fa fa-facebook"></i></a>
+					<a href=""><i class="fa fa-linkedin"></i></a>
+					<a href=""><i class="fa fa-twitter"></i></a>
+					<a href=""><i class="fa fa-youtube-play"></i></a>
+					<a href=""><i class="fa fa-instagram"></i></a>
+				</div>
+        </div>
+	</section>
+    <div  id="breadcrumb">
+    <div class="container">
+        <ul class="breadcrumb">
+            <li><a href="/">Anasayfa  </a> </li>
+            <li class="active">Sıkça Sorulan Sorular</li>
+
+        </ul>
+    </div>
+    </div>
+
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div id="accordion">
+                    {% for rs in faq %}
+                    <h3>{{ rs.question }}</h3>
+                    <div>
+                        <p>{{ rs.answer }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+
+                </table><br><br>
+            </div>
+        </div>
+    </section>
+
+
+
+
+{% endblock %}

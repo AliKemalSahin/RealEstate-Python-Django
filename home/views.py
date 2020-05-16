@@ -5,7 +5,7 @@ from django.shortcuts import render
 from home.forms import SearchForm, KayitForm
 # Create your views here.
 from emlak.models import Emlak, Category, Images, Comment
-from home.models import Setting, ContactFormu, ContactFormMessage, UserProfile
+from home.models import Setting, ContactFormu, ContactFormMessage, UserProfile, FAQ
 import json
 
 def index(request):
@@ -163,3 +163,13 @@ def kayit_view(request):
                'form': form,
                }
     return render(request, 'kayit.html', context)
+
+
+def faq(request):
+    category = Category.objects.all()
+    faq = FAQ.objects.all().order_by('ordernumber')
+    context = {
+        'category':category,
+        'faq':faq
+    }
+    return render(request,'faq.html',context)
