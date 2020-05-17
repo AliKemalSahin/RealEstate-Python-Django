@@ -135,10 +135,17 @@ class Comment(models.Model):
     def __str__(self):
         return self.subject
 
+class EmlakImageForm(ModelForm):      # ilanda çoklu resim galerisine ekleme icin
+    class Meta:
+        model = Images
+        fields = ['title','image']
+
 class CommentForm(ModelForm):
     class Meta:
         model = Comment
         fields = ['subject','comment','rate']
+
+
 
 
 

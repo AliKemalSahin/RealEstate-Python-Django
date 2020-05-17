@@ -77,6 +77,7 @@
                             <th class="text-left">Title</th>
                             <th class="text-left">Category</th>
                             <th class="text-left">Ücret</th>
+                            <th class="text-left">Galeri</th>
                             <th class="text-left">Mt2</th>
                             <th class="text-left">Odalar</th>
                             <th class="text-left">Salon</th>
@@ -100,6 +101,11 @@
                                 </td>
                                 <td class="text-left">{{ rs.category }}</td>
                                 <td class="text-left">{{ rs.price }}</td>
+                                <td class="text-left">
+                                    <a href="javascript:;" onclick="window.open('/user/emlakAddImage/{{ rs.id }}','galeri','height=600, width=800,top=50,left=150')">
+                                        <img  src="/uploads/images/iconGaleri.png">
+                                    </a>
+                                </td>
                                 <td class="text-left">{{ rs.square }}</td>
                                 <td class="text-left">{{ rs.rooms }}</td>
                                 <td class="text-left">{{ rs.salon }}</td>

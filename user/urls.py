@@ -15,6 +15,7 @@ urlpatterns = [
     path('ilanlarim/', views.ilanlarim, name='ilanlarim'),
     path('ilanDuzenle/<int:id>', views.ilanDuzenle, name='ilanDuzenle'),
     path('ilanSil/<int:id>', views.ilanSil, name='ilanSil'),
+    path('emlakAddImage/<int:id>', views.emlakAddImage, name='emlakAddImage'),
 
 
 

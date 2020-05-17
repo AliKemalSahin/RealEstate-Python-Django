@@ -5,7 +5,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.contrib import messages
 # Create your views here.
-from emlak.models import Category, Comment, EmlakForm, Emlak
+from emlak.models import Category, Comment, EmlakForm, Emlak, EmlakImageForm, Images
 from home.models import UserProfile
 from user.forms import UserUpdateForm, ProfileUpdateForm
 
@@ -160,6 +160,35 @@ def ilanSil(request, id):
     Emlak.objects.filter(id=id, user_id=current_user.id).delete()
     messages.success(request,'İlan Silindi!')
     return HttpResponseRedirect('/user/ilanlarim')
+
+
+def emlakAddImage(request,id):
+    if request.method =='POST':
+        lasturl = request.META.get('HTTP_REFERER')
+        form = EmlakImageForm(request.POST, request.FILES)
+        if form.is_valid():
+            data = Images()
+            data.title = form.cleaned_data['title']
+            data.emlak_id = id
+            data.image = form.cleaned_data['image']
+            data.save()
+            messages.success(request, 'Eklediğiniz Resim Başarıyla Sisteme Yüklendi.')
+            return HttpResponseRedirect(lasturl)
+        else:
+            messages.warning(request,'Form Error:' + str(form.errors))
+            return HttpResponseRedirect(lasturl)
+    else:
+        emlak = Emlak.objects.get(id = id)
+        images = Images.objects.filter(emlak_id=id)
+        category = Category.objects.all()
+        form = EmlakImageForm()
+        context = {
+            'category':category,
+            'emlak':emlak,
+            'images':images,
+            'form':form,
+        }
+        return render(request,'ilanGallery.html',context)
 
 
 
