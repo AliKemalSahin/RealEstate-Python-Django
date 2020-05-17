@@ -42,7 +42,7 @@ def iletisim(request):
     if request.method == "POST":
         form = ContactFormu(request.POST)
         if form.is_valid():
-            data = ContactFormMessage()
+            data = ContactFormMessage()  # model
             data.name = form.cleaned_data['name']
             data.email = form.cleaned_data['email']
             data.subject = form.cleaned_data['subject']
@@ -72,7 +72,7 @@ def emlak_detail(request,id,slug):
     category = Category.objects.all()
     emlak = Emlak.objects.get(pk=id)
     images = Images.objects.filter(emlak_id=id)
-    comments = Comment.objects.filter(emlak_id=id,status='True')
+    comments = Comment.objects.filter(emlak_id=id,status='True')  # yorumlar status='True' ile eğer admin onayladıysa gözüksün yaptık
 
     context = {'emlak':emlak,
                'category':category,
@@ -126,7 +126,7 @@ def login_view(request):
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
-        user = authenticate(request, username=username, password=password)
+        user = authenticate(request, username=username, password=password)  # veritabanında kontrol
         if user is not None:
             login(request, user)
             return HttpResponseRedirect('/')
@@ -136,18 +136,18 @@ def login_view(request):
 
     category = Category.objects.all()
     context = {'category': category, }
-    return render(request, 'login.html', context)
+    return render(request, 'login.html', context)  # html i açma
 
 
 def kayit_view(request):
     if request.method == 'POST':
-        form = KayitForm(request.POST)
+        form = KayitForm(request.POST)  # form ile bağlantı
         if form.is_valid():      # burda if else yapmamıza gerek yok zaten kaydedilen yollanıyor.Validation yapılıyor burda.
             form.save()
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=password)
-            login(request, user)
+            login(request, user) # auto login
 
             current_user = request.user
             data = UserProfile()
@@ -162,7 +162,7 @@ def kayit_view(request):
     context = {'category': category,
                'form': form,
                }
-    return render(request, 'kayit.html', context)
+    return render(request, 'kayit.html', context)  # html i açma
 
 
 def faq(request):

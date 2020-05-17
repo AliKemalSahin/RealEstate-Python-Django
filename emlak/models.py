@@ -67,7 +67,7 @@ class Emlak(models.Model):   # tablomuz
     slug = models.SlugField(null=False, unique=True)
     status = models.CharField(max_length=10, choices=STATUS)   # yukarda evet hayır verdiğimiz için drowdown menude evet hayır var
 
-    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)  # USER İLE EMLAK BAĞLAMA İLAN VERME İÇİN
 
     create_at = models.DateTimeField(auto_now_add=True)   # ne zaman oluşturuldu
     update_at = models.DateTimeField(auto_now_add=True)   # ne zaman güncellendi
